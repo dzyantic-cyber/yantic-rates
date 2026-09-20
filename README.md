@@ -12,7 +12,9 @@ Public data file read by the Sarf Yantic app to show the parallel-market
 ```
 
 - `eur` / `usd`: dinars for 1 euro / 1 US dollar (numbers).
-- `updated`: date of the observation, for humans (the app currently ignores it).
+- `updated`: date of the observation, `YYYY-MM-DD` (or `YYYY-MM-DD HH:MM`).
+  The app shows this as the "last updated" date, so keep it accurate — if it
+  can't be parsed, the app falls back to the time it fetched the file.
 
 ## Daily update
 
