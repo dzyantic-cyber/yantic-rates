@@ -41,3 +41,19 @@ and the date, commit. The app picks it up on its next refresh — no app
 release needed.
 
 Indicative rates only, informal market — not an official quotation.
+
+## App update prompt: `version.json`
+
+```json
+{ "latest_version": "2.2.0", "min_version": "1.0.0" }
+```
+
+- `latest_version`: newest version **live on Google Play**. Installs older than
+  this get a dismissible "Update available" prompt, at most once a day.
+  Change it only after the release is actually live on Play — otherwise users
+  are told to update to something the store can't give them yet.
+- `min_version`: oldest version still allowed. Installs older than this get a
+  blocking "Update required" prompt. Leave it at `1.0.0` unless a version is
+  broken or unsafe.
+
+Format is `major.minor.patch` (the `+build` number is not used).
